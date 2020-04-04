@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
   t = atoi(argv[2]);
   tam = n / t;
 
+  pthread_mutex_init(&lock, NULL);
   threads = (pthread_t *) malloc(sizeof(pthread_t) * t);
   data = (thread_data_t *) malloc(sizeof(thread_data_t) * t);
   vector = (int *) malloc(sizeof(int) * n);
